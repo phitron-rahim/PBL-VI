@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="all"
+    android:background="@drawable/gradient_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- App Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/baseline_home_work_24"
+                app:tint="#FFFFFF"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Smart Home Control"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Developed by Raisu &amp; Shakib © 2025"
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Living Room Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Room Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_meeting_room_24"
+                        app:tint="#1E88E5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Living Room"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1E88E5"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Devices Grid -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="4"
+                    android:layout_marginTop="12dp">
+
+                    <!-- Row 1 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/living_light1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light 1"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/living_light2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light 2"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"
+                        android:layout_column="1"/>
+
+                    <!-- Row 2 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/living_fan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fan 1"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/living_fan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fan 2"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"
+                        android:layout_column="1"/>
+
+                    <!-- Row 3 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/living_ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AC"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/living_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TV"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"
+                        android:layout_column="1"/>
+
+                    <!-- Row 4 - Door Control -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Door:"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:layout_marginTop="16dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/living_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_column="1"
+                        android:layout_marginTop="16dp">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/living_door_open"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Open"
+                            android:textColor="#333333"/>
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/living_door_close"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Close"
+                            android:checked="true"
+                            android:textColor="#333333"
+                            android:layout_marginStart="16dp"/>
+                    </RadioGroup>
+                </GridLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bedroom Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Room Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_bedroom_parent_24"
+                        app:tint="#1E88E5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bedroom"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1E88E5"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Devices Grid -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="3"
+                    android:layout_marginTop="12dp">
+
+                    <!-- Row 1 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/bedroom_light1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light 1"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/bedroom_light2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light 2"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"
+                        android:layout_column="1"/>
+
+                    <!-- Row 2 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/bedroom_fan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fan 1"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/bedroom_fan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fan 2"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"
+                        android:layout_column="1"/>
+
+                    <!-- Row 3 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/bedroom_ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AC"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <!-- Door Control -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Door:"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:layout_marginTop="16dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/bedroom_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_column="1"
+                        android:layout_marginTop="16dp">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/bedroom_door_open"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Open"
+                            android:textColor="#333333"/>
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/bedroom_door_close"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Close"
+                            android:checked="true"
+                            android:textColor="#333333"
+                            android:layout_marginStart="16dp"/>
+                    </RadioGroup>
+                </GridLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Kitchen Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Room Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_soup_kitchen_24"
+                        app:tint="#1E88E5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kitchen"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1E88E5"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Devices Grid -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="3"
+                    android:layout_marginTop="12dp">
+
+                    <!-- Row 1 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/kitchen_light1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light 1"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/kitchen_light2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light 2"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"
+                        android:layout_column="1"/>
+
+                    <!-- Row 2 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/kitchen_fan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fan 1"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/kitchen_fan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fan 2"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"
+                        android:layout_column="1"/>
+
+                    <!-- Row 3 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/kitchen_ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AC"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <!-- Door Control -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Door:"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:layout_marginTop="16dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/kitchen_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_column="1"
+                        android:layout_marginTop="16dp">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/kitchen_door_open"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Open"
+                            android:textColor="#333333"/>
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/kitchen_door_close"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Close"
+                            android:checked="true"
+                            android:textColor="#333333"
+                            android:layout_marginStart="16dp"/>
+                    </RadioGroup>
+                </GridLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Guest Room Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Room Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_person_pin_circle_24"
+                        app:tint="#1E88E5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Guest Room"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1E88E5"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Devices Grid -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="2"
+                    android:layout_marginTop="12dp">
+
+                    <!-- Row 1 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/guest_light1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light 1"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/guest_fan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fan 1"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"
+                        android:layout_column="1"/>
+
+                    <!-- Row 2 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/guest_ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AC"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <!-- Door Control -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Door:"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:layout_marginTop="16dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/guest_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_column="1"
+                        android:layout_marginTop="16dp">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/guest_door_open"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Open"
+                            android:textColor="#333333"/>
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/guest_door_close"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Close"
+                            android:checked="true"
+                            android:textColor="#333333"
+                            android:layout_marginStart="16dp"/>
+                    </RadioGroup>
+                </GridLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Office Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Room Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_warehouse_24"
+                        app:tint="#1E88E5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Office"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1E88E5"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Devices Grid -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="2"
+                    android:layout_marginTop="12dp">
+
+                    <!-- Row 1 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/office_light1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light 1"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/office_fan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fan 1"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"
+                        android:layout_column="1"/>
+
+                    <!-- Row 2 -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/office_ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AC"
+                        android:layout_marginTop="16dp"
+                        android:textColor="#333333"
+                        app:useMaterialThemeColors="true"/>
+
+                    <!-- Door Control -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Door:"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:layout_marginTop="16dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/office_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_column="1"
+                        android:layout_marginTop="16dp">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/office_door_open"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Open"
+                            android:textColor="#333333"/>
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/office_door_close"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Close"
+                            android:checked="true"
+                            android:textColor="#333333"
+                            android:layout_marginStart="16dp"/>
+                    </RadioGroup>
+                </GridLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
